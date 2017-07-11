@@ -105,23 +105,19 @@ for (let i = 0; i < formData.length; i++) {
   }
   if (formData[i].type === "select") {
     let select = document.createElement("select")
-    select.placeholder= formData[i].label
+    for (let j = 0; j < formData[i].options.length; j++) {
+      let opt = document.createElement("option")
+      opt.innerHTML = formData[i].options[j].label
+      opt.value = formData[i].options[j].value
+      select.appendChild(opt)
+    }
     document.getElementById("fields").appendChild(select)
-  } else {
+  }  else {
     let element = document.createElement("input")
     element.placeholder= formData[i].label
     document.getElementById("fields").appendChild(element)
   }
-
-
 }
-
-
-
-// option = document.createElement('option');
-// option.value = 'theValue';
-// option.text = 'the text';
-// select.appendChild(option);
 
 
 
