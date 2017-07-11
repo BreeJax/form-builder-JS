@@ -96,5 +96,25 @@ let formData = [
 
 
 // -------- Your Code Goes Below this Line --------
+for (let i = 0; i < formData.length; i++) {
+  console.log(formData[i])
+  let element = document.createElement("input")
+  element.placeholder= formData[i].label
+  document.getElementById("fields").appendChild(element)
+}
 
 
+
+// <input type="text" placeholder="First Name" id="firstnameInput">
+// <input type="text" placeholder="Last Name" id="lastnameInput">
+// <input type="text" placeholder="Email" id="emailInput">
+// <input type="text" placeholder="Current website url" id="urlInput">
+// <select placeholder="Select language..." id="language">
+//     <option value="English">English</option>
+//     <option value="Español">Español</option>
+//     <option value="Français">Français</option>
+//     <option value="عربى">عربى</option>
+// </select>
+// <textarea name="your comment" id="your-comment" placeholder="Your comment" cols="30" rows="10"></textarea>
+// <input type="phonenumber" placeholder="Mobile Number" id="mobileNumber">
+// <input type="phonenumber" placeholder="Home Number" id="homeNumber">
