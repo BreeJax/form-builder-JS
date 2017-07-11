@@ -98,10 +98,32 @@ let formData = [
 // -------- Your Code Goes Below this Line --------
 for (let i = 0; i < formData.length; i++) {
   console.log(formData[i])
-  let element = document.createElement("input")
-  element.placeholder= formData[i].label
-  document.getElementById("fields").appendChild(element)
+  if (formData[i].type === "textarea") {
+    let textarea = document.createElement("textarea")
+    textarea.placeholder= formData[i].label
+    document.getElementById("fields").appendChild(textarea)
+  }
+  if (formData[i].type === "select") {
+    let select = document.createElement("select")
+    select.placeholder= formData[i].label
+    document.getElementById("fields").appendChild(select)
+  } else {
+    let element = document.createElement("input")
+    element.placeholder= formData[i].label
+    document.getElementById("fields").appendChild(element)
+  }
+
+
 }
+
+
+
+// option = document.createElement('option');
+// option.value = 'theValue';
+// option.text = 'the text';
+// select.appendChild(option);
+
+
 
 
 
