@@ -38,6 +38,10 @@ let formData = [
     "icon": "",
     "options": [
       {
+        "label": "Select Language",
+        "value": "SL"
+      },
+      {
         "label": "English",
         "value": "EN"
       },
@@ -97,14 +101,20 @@ let formData = [
 
 // -------- Your Code Goes Below this Line --------
 for (let i = 0; i < formData.length; i++) {
-  console.log(formData[i])
+  // console.log(formData[i])
   if (formData[i].type === "textarea") {
     let textarea = document.createElement("textarea")
     textarea.placeholder= formData[i].label
     document.getElementById("fields").appendChild(textarea)
   }
   if (formData[i].type === "select") {
+
     let select = document.createElement("select")
+    let sl = document.createElement("option")
+    sl.value = 0;
+    sl.innerHTML = formData[i].label
+    select.appendChild(sl)
+
     for (let j = 0; j < formData[i].options.length; j++) {
       let opt = document.createElement("option")
       opt.innerHTML = formData[i].options[j].label
@@ -136,3 +146,8 @@ for (let i = 0; i < formData.length; i++) {
 // <textarea name="your comment" id="your-comment" placeholder="Your comment" cols="30" rows="10"></textarea>
 // <input type="phonenumber" placeholder="Mobile Number" id="mobileNumber">
 // <input type="phonenumber" placeholder="Home Number" id="homeNumber">
+
+
+
+
+//
